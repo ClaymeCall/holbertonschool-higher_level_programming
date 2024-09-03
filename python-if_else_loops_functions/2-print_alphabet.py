@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 
-alphabet_indexes = range(ord('a'), ord('z') + 1)
-for i in alphabet_indexes:
+for i in range(ord('a'), ord('z') + 1):
     print(f"{chr(i)}", end='')
