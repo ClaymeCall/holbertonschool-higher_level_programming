@@ -7,4 +7,4 @@ for i in range(0, 10):
             print("{}{}".format(i, j), end=", ")
 
         elif i+j == 17:
-            print("{}{}".format(i, j), end="")
+            print("{}{}".format(i, j))
