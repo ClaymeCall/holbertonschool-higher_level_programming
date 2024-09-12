@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    if not roman_string: #Checking for incorrect input roman string
+    # Checking for incorrect input roman string
+    if not isinstance(roman_string, str) or roman_string is None:
         return 0
 
     # Reversing roman string to facilitate its processing
