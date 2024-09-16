@@ -9,7 +9,7 @@ This module provides a Square class.
 class Square:
     """
     Defines a Square object.
-    
+
     Attributes:
         size (no type): The size of the square.
     """
