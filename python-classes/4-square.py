@@ -3,7 +3,7 @@
 4-square.py
 
 This module provides a Square class.
-It includes to return size, area, and set a new size.
+It includes methods to return size, area, and set a new size.
 """
 
 
