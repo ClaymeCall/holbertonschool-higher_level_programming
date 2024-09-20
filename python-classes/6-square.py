@@ -16,21 +16,16 @@ class Square:
         position (int): The size of the square.
     """
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initialize the square with a certain size.
 
         Args:
-            size (no type): The size of the square.
+            size (int): The size of the square.
+            position (int): The position of the square
         """
-        if type(size) is int:
-            self.__size = size
-        else:
-            raise TypeError("size must be an integer")
-        if size >= 0:
-            self.__size = size
-        else:
-            raise ValueError("size must be >= 0")
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -44,18 +39,6 @@ class Square:
         Size of the square, as int.
         """
         return self.__size
-
-    def area(self):
-        """
-        Returns the area of the current square.
-
-        Args:
-        self (Square): Current instance of Square object.
-
-        Return:
-        Area of the square, as int.
-        """
-        return self.__size ** 2
 
     @size.setter
     def size(self, value):
@@ -75,6 +58,41 @@ class Square:
         else:
             raise ValueError("size must be >= 0")
 
+    @property
+    def position(self):
+        """ Returns the position of the square """
+        return self.__position
+
+    @position.setter
+    def position(self, value):        
+        """
+        Sets the position of square
+
+        Attribut:
+        value (int): Tuple storing the coordinates
+        """
+        if type(value) is not tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        for num in value:
+            if type(num) is not int or num < 0:
+                raise TypeError("position must be a tuple of 2 positive integers")
+
+        self.__position = value
+
+    def area(self):
+        """
+        Returns the area of the current square.
+
+        Args:
+        self (Square): Current instance of Square object.
+
+        Return:
+        Area of the square, as int.
+        """
+        return self.__size ** 2
+
+
     def my_print(self):
         """
         Prints the current square.
@@ -84,8 +102,9 @@ class Square:
         """
         if self.__size == 0:
             print()
+
         else:
+            print("\n" * self.__position[1], end="")
+
             for i in range(self.__size):
-                for j in range(self.__size):
-                    print("#", end='')
-                print()
+                print(" " * self.__position[0] + "#" * self.__size)
