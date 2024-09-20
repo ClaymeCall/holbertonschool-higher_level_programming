@@ -64,19 +64,21 @@ class Square:
         return self.__position
 
     @position.setter
-    def position(self, value):        
+    def position(self, value):
         """
         Sets the position of square
 
         Attribut:
         value (int): Tuple storing the coordinates
         """
+        err_msg = "position must be a tuple of 2 positive integers"
+
         if type(value) is not tuple or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(err_msg)
 
         for num in value:
             if type(num) is not int or num < 0:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                raise TypeError(err_msg)
 
         self.__position = value
 
@@ -91,7 +93,6 @@ class Square:
         Area of the square, as int.
         """
         return self.__size ** 2
-
 
     def my_print(self):
         """
