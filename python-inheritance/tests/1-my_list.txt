@@ -68,7 +68,7 @@ Checking for method docstring:
 Checking that MyList inherits from list:
     >>> MyList = __import__('1-my_list').MyList
     >>> issubclass(MyList, list)
-    TrueThis class prints itself in ascending order.
+    True
 
 Checking that appending works and printing the list:
     >>> my_list = MyList()
@@ -97,4 +97,4 @@ Checking for negative numbers:
     >>> print(my_list)
     [1, 4, 2, 3, 5, -1, -10]
     >>> my_list.print_sorted()
-    [-10, -1, 1, 2, 3, 4, 5](sorted(self))
+    [-10, -1, 1, 2, 3, 4, 5]
