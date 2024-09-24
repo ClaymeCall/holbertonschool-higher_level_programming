@@ -5,7 +5,7 @@ This module contains a class that inherits from List.
 '''
 
 
-class MyList:
+class MyList(list):
     '''
     This class prints itself in ascending order.
     '''
