@@ -30,16 +30,21 @@ This module contains a class that inherits from List.
 '''
 
 
-class MyList:
+class MyList(list):
     '''
     This class prints itself in ascending order.
     '''
+    def __init__(self):
+        '''
+        Initializes a new instance
+        '''
+        super().__init__()
 
     def print_sorted(self):
         '''
         This method prints the contents of the current instance calling it.
         '''
-        print
+        print(sorted(self))
 
 ==========
 Unit tests
@@ -63,7 +68,7 @@ Checking for method docstring:
 Checking that MyList inherits from list:
     >>> MyList = __import__('1-my_list').MyList
     >>> issubclass(MyList, list)
-    True
+    TrueThis class prints itself in ascending order.
 
 Checking that appending works and printing the list:
     >>> my_list = MyList()
