@@ -9,6 +9,11 @@ class MyList(list):
     '''
     This class prints itself in ascending order.
     '''
+    def __init__(self):
+        '''
+        Initializes a new instance
+        '''
+        super.__init__()
 
     def print_sorted(self):
         '''
