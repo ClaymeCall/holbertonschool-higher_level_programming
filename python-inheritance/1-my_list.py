@@ -13,7 +13,7 @@ class MyList(list):
         '''
         Initializes a new instance
         '''
-        super.__init__()
+        super().__init__()
 
     def print_sorted(self):
         '''
