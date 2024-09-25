@@ -53,9 +53,11 @@ class Rectangle(BaseGeometry):
         self.__height = self.integer_validator("height", height)
 
     def area(self):
+        """Calculate and return the area of the rectangle."""
         return self.__width * self.__height
 
     def __str__(self):
+        """Return a string representation of the rectangle."""
         classname = self.__class__.__name__
         str = "[{}] {}/{}".format(classname, self.__width, self.__height)
         return str
@@ -81,8 +83,10 @@ class Square(Rectangle):
         self.__size = size
 
     def area(self):
+        """Calculate and return the area of the square."""
         return self.__size ** 2
 
     def __str__(self):
+        """Return a string representation of the square."""
         str = "[Rectangle] {}/{}".format( self.__size, self.__size)
         return str
