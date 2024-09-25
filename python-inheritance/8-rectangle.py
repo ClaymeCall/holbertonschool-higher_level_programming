@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 '''
 This module provides a Rectangle class that inherits from BaseGeometry class.
 '''
 
-
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     '''
@@ -25,5 +25,3 @@ class Rectangle(BaseGeometry):
         """
         self.__width = self.integer_validator("width", width)
         self.__height = self.integer_validator("height", height)
-
-
