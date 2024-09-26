@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+'''
+This module provides an abstract class animal
+and two subclasses that can return their respective sound.
+'''
 
 from abc import ABC, abstractmethod
 
