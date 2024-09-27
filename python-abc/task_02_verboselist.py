@@ -1,7 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin//env python3
 
 
 class VerboseList(list):
+
     def append(self, item=None):
         super().append(item)
         print("Added [{}] to the list.".format(item))
