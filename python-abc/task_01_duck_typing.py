@@ -4,6 +4,7 @@ This module provides an abstract class Shape
 and two subclasses that can return their respective area and perimeter.
 '''
 
+
 from abc import ABC, abstractmethod
 import math
 
@@ -20,7 +21,7 @@ class Shape(ABC):
 
 class Circle(Shape):
     def __init__(self, radius):
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         return math.pi * (self.radius ** 2)
