@@ -12,6 +12,7 @@ class Shape(ABC):
     @abstractmethod
     def area(self):
         ...
+
     @abstractmethod
     def perimeter(self):
         ...
