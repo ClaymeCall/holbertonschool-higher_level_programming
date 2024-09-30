@@ -3,6 +3,7 @@
 This modules provides a function that reads and prints a files content.
 '''
 
+
 def read_file(filename=""):
     '''
     Read a text file (UTF8) and print it to stdout.
