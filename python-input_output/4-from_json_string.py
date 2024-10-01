@@ -14,4 +14,4 @@ def from_json_string(my_str):
     Returns:
         An object containing the same data as the JSON.
     '''
-    return json.dumps(my_str)
+    return json.load(my_str)
