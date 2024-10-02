@@ -3,6 +3,7 @@
 This module provides a Student class that stores student info.
 '''
 
+
 class Student():
     '''
     Stores student information
@@ -24,7 +25,6 @@ class Student():
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-
 
     def to_json(self):
         '''
