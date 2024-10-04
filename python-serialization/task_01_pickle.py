@@ -27,8 +27,11 @@ class CustomObject():
         Returns:
             None
         '''
-        with open(filename, 'wb', ) as file:
-            pickle.dump(self, file)
+        try:
+            with open(filename, 'wb', ) as file:
+                pickle.dump(self, file)
+        except Exception:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -41,5 +44,8 @@ class CustomObject():
         Returns:
             deserialized object
         '''
-        with open(filename, 'rb') as file:
-            return pickle.load(file)
+        try:
+            with open(filename, 'rb') as file:
+                return pickle.load(file)
+        except Exception:
+            return None
