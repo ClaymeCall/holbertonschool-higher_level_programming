@@ -2,7 +2,8 @@
 '''
 This module provides utility to convert CSV to JSON
 '''
-import csv, json
+import csv
+import json
 
 
 def convert_csv_to_json(csv_filename):
