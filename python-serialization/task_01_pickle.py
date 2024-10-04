@@ -16,7 +16,6 @@ class CustomObject():
         print(f"Age: {self.age}")
         print(f"Is Student: {self.is_student}")
 
-
     def serialize(self, filename):
         '''
         Pickles the object in a file.
