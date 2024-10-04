@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+'''
+Defines a function that returns a pascal triangle.
+'''
+
 
 def pascal_triangle(n):
     '''
