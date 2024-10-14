@@ -10,7 +10,11 @@ class Server(BaseHTTPRequestHandler):
     '''
     This class includes basic components for a HTTP server
     '''
+
     def do_GET(self):
+        '''
+        Handles GET requests.
+        '''
         match self.path:
             case "/":
                 self.send_response(200)
