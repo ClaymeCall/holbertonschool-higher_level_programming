@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+This module provides a simple HTTP request handler class.
+'''
 
 import http.server
 import json
