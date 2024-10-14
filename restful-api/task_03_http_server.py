@@ -57,7 +57,7 @@ class Server(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
 
-if __name__ is "__main__":
+if __name__ == "__main__":
     with http.server.HTTPServer(("", PORT), Server) as httpd:
         print(f"Serving at port {PORT}")
         httpd.serve_forever()
