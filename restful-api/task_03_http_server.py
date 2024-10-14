@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
-from http.server import BaseHTTPRequestHandler, HTTPServer
+import http.server
 import json
 
 PORT = 8000
 
 
-class Server(BaseHTTPRequestHandler):
+class Server(http.server.BaseHTTPRequestHandler):
     '''
     This class includes basic components for a HTTP server
     '''
@@ -56,6 +56,6 @@ class Server(BaseHTTPRequestHandler):
                 self.wfile.write(b"Endpoint not found")
 
 if __name__ is "__main__":
-    with HTTPServer(("", PORT), Server) as httpd:
+    with http.server.HTTPServer(("", PORT), Server) as httpd:
         print(f"Serving at port {PORT}")
         httpd.serve_forever()
