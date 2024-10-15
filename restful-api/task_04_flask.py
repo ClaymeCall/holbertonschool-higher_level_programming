@@ -21,6 +21,7 @@ def home():
     '''
     return "Welcome to the Flask API!"
 
+
 @app.route("/data")
 def get_usernames():
     '''
@@ -28,12 +29,14 @@ def get_usernames():
     '''
     return jsonify(list(users.keys()))
 
+
 @app.route("/status")
 def get_status():
     '''
     Returns the status of the API.
     '''
     return "OK"
+
 
 @app.route("/users/<username>")
 def get_user_info(username):
@@ -44,6 +47,7 @@ def get_user_info(username):
         return jsonify({"error": "User not found"}), 404
     else:
         return users.get(username)
+
 
 @app.route("/add_user", methods=["POST"])
 def return_user_info(username):
