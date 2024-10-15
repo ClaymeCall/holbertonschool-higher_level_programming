@@ -50,7 +50,7 @@ def get_user_info(username):
 
 
 @app.route("/add_user", methods=["POST"])
-def return_user_info(username):
+def add_user():
     '''
     Adds a new user to the database.
     '''
