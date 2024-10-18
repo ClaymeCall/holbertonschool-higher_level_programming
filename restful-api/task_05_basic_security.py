@@ -69,9 +69,9 @@ def post_simple_login():
     if not username or not password:
         return jsonify({"message": "Missing username or password"}), 400
 
-    valid_credentials = verify_password(username, password)
-    if valid_credentials:
-        new_token = create_access_token(identity=username)
+    authed_user = verify_password(username, password)
+    if authed_user != None:
+        new_token = create_access_token(identity=authed_user)
         return jsonify({"access_token": new_token})
 
 
