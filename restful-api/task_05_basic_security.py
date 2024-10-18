@@ -72,7 +72,7 @@ def post_simple_login():
     authed_user = verify_password(username, password)
     if authed_user is not None:
         new_token = create_access_token(identity=authed_user)
-        return jsonify(access_token=access_token)
+        return jsonify(access_token=new_token)
 
     else:
         return jsonify({"message": "Bad username of password"}), 401
