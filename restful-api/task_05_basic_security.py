@@ -70,15 +70,18 @@ def post_simple_login():
         return jsonify({"message": "Missing username or password"}), 400
 
     authed_user = verify_password(username, password)
-    if authed_user != None:
+    if authed_user is not None:
         new_token = create_access_token(identity=authed_user)
-        return jsonify({"access_token": new_token})
+        return jsonify(access_token=access_token)
+
+    else:
+        return jsonify({"message": "Bad username of password"}), 401
 
 
 # Logging in with Basic JWT token authentication.
 @app.route('/jwt-protected')
 @jwt_required()
-def jwt_protected():
+def jwt_protected_login():
     return "JWT Auth: Access Granted"
 
 
@@ -128,4 +131,4 @@ def handle_needs_fresh_token_error(err):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
