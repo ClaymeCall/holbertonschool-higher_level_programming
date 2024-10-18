@@ -69,10 +69,10 @@ def post_simple_login():
     if not username or not password:
         return jsonify({"message": "Missing username or password"}), 400
 
-
     valid_credentials = verify_password(username, password)
     if valid_credentials:
-        return jsonify({"access_token": create_access_token(identity=username)})
+        new_token = create_access_token(identity=username)
+        return jsonify({"access_token": new_token})
 
 
 # Logging in with Basic JWT token authentication.
@@ -96,9 +96,12 @@ def admin_only_login():
 
     return "Admin Access: Granted"
 
+
 '''
 JWT error handlers
 '''
+
+
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
