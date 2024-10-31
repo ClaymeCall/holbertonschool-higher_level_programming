@@ -1,6 +1,6 @@
 # SQL - Introduction
 
-This folder hosts all files for the first project of week 20 of Holberton School.
+This folder hosts all files for the first project of week 22 of Holberton School.
 
 ## Files
 
