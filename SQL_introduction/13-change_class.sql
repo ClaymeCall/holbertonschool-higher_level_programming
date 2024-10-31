@@ -1,4 +1,3 @@
 -- Deletes all rows with score <= 5
-UPDATE second_table 
-DELETE * 
+DELETE FROM second_table
 WHERE score <= 5;
