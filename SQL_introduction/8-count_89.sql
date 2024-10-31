@@ -1,3 +1,3 @@
 -- Returns all rows where id = 89
-COUNT(SELECT * FROM first_table
-WHERE id = 89);
+SELECT COUNT(*) FROM first_table
+WHERE id = 89;
