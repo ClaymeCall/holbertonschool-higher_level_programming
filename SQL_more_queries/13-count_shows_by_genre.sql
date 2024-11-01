@@ -1,5 +1,5 @@
--- Lists all shows in the database, and fills empty genres with NULL
-SELECT tv_shows.title, tv_genres.name FROM tv_shows
-LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
-LEFT JOIN tv_genres ON tv_show_genres.genre_id = tv_genres.id
-ORDER BY tv_shows.title, tv_genres.name ASC;
+-- Lists each genre's show COUNT
+SELECT tv_genres.name as "genre", COUNT(*) as "number_of_shows" FROM tv_genres
+LEFT JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id 
+GROUP BY genre
+ORDER BY number_of_shows DESC;
