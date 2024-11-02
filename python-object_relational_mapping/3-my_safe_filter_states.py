@@ -58,8 +58,8 @@ if __name__ == "__main__":
     states = cursor.fetchall()
     # Iterate over the rows to print the states
     for state in states:
-            # Print the state
-            print(state)
+        # Print the state
+        print(state)
     # Close the cursor and database
     cursor.close()
     db.close()
