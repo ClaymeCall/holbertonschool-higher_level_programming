@@ -11,7 +11,7 @@ import MySQLdb
 
 if __name__ == "__main__":
     """
-    Retrieve all states sorted by id from the database
+    Retrieve all states starting with 'N' sorted by id from the database
     specified in the command line.
 
     Usage:
