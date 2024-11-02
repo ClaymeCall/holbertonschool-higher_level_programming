@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Create a script that changes the name of a State object 
+Create a script that changes the name of a State object
 from the database hbtn_0e_6_usa
 """
 
@@ -12,7 +12,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Create a script that changes the name of a State object 
+    Create a script that changes the name of a State object
     from the database hbtn_0e_6_usa
 
     Usage: ./12-model_state_update_id_2.py
