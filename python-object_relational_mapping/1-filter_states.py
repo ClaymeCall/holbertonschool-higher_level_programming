@@ -53,8 +53,9 @@ if __name__ == "__main__":
     states = cursor.fetchall()
     # Iterate over the rows to print the states
     for state in states:
-        # Print the state
-        print(state)
+        # Print the state with double check of the name starting with 'N'
+        if state[1][0] == 'N':
+            print(state)
     # Close the cursor and database
     cursor.close()
     db.close()
