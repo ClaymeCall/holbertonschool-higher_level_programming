@@ -15,10 +15,11 @@ if __name__ == "__main__":
     specified in the command line.
 
     Usage:
-        ./1-filter_states.py
+        ./2-my_filter_states.py
         <mysql username>
         <mysql password>
         <database name>
+        <state name>
 
     Arguments:
         sys.argv[1]: The MySQL username
