@@ -53,7 +53,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     # Execute the query
     cursor.execute("SELECT * FROM states WHERE name = %s \
-        ORDER BY id ASC",(looked_up_state_name,))
+        ORDER BY id ASC", (looked_up_state_name,))
     # Fetch all the rows in a list of lists
     states = cursor.fetchall()
     # Iterate over the rows to print the states
