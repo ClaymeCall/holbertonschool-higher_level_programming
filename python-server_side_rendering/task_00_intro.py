@@ -2,7 +2,7 @@
 import os
 
 
-# Define expected keys as a constant
+
 EXPECTED_KEYS = ["name", "event_title", "event_date", "event_location"]
 
 def generate_invitations(template, attendees):
