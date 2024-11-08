@@ -1,42 +1,45 @@
-#!/usr/bin/python3
 import os
 
 
-
-EXPECTED_KEYS = ["name", "event_title", "event_date", "event_location"]
-
 def generate_invitations(template, attendees):
 
-    if not isinstance(template, str):
-        raise ValueError("Template must be a string")
+    try:
+        if not isinstance(template, str):
+            raise TypeError("Template is not a string.")
+        
+        if not isinstance(attendees, list) or not all(isinstance(attendee, dict) for attendee in attendees):
+            raise TypeError("Attendees should be a list of dictionaries.")
+    except TypeError as e:
+        print(f"Error: {e}")
+        return
 
-    if not isinstance(attendees, list):
-        raise ValueError("Attendees must be a list")
+    # Vérification des entrées vides
+    try:
+        if not template.strip():
+            raise ValueError("Template is empty, no output files generated.")
+        
+        if not attendees:
+            raise ValueError("No data provided, no output files generated.")
+    except ValueError as e:
+        print(f"Error: {e}")
+        return
 
-    if template.strip() == "":
-        raise ValueError("Template is empty")
-
-    if not attendees:
-        raise ValueError("Attendees list is empty")
-
-    # Check each attendee for correct type and expected keys
     for i, attendee in enumerate(attendees, start=1):
-        if not isinstance(attendee, dict):
-            raise ValueError(f"Attendee {i} is not a dictionary")
-        missing_keys = EXPECTED_KEYS - attendee.keys()
-        if missing_keys:
-            raise ValueError(f"Attendee {i} is missing keys: {', '.join(missing_keys)}")
+        output_content = template
+        for key in ["name", "event_title", "event_date", "event_location"]:
+            placeholder = "{" + key + "}"
+            value = attendee.get(key, "N/A")
+            if value is None:
+                value = "N/A"
+            output_content = output_content.replace(placeholder, value)
+        output_filename = f"output_{i}.txt"
 
+        if os.path.exists(output_filename):
+            print(
+                f"Warning: {output_filename}\
+                already exists. Skipping file creation."
+                  )
+            continue
 
-    for index, attendee in enumerate(attendees, start=1):
-        content = template.format(
-            name=attendee.get("name", "N/A"),
-            event_title=attendee.get("event_title", "N/A"),
-            event_date=attendee.get("event_date", "N/A"),
-            event_location=attendee.get("event_location", "N/A")
-        )
-
-        file_name = f"output_{index}.txt"
-        with open(file_name, "w") as file:
-            file.write(content)
-        print(f"Invitation generated: {file_name}")
+        with open(output_filename, 'w') as output_file:
+            output_file.write(output_content)
