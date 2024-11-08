@@ -13,7 +13,6 @@ def generate_invitations(template, attendees):
         print(f"Error: {e}")
         return
 
-    # Vérification des entrées vides
     try:
         if not template.strip():
             raise ValueError("Template is empty, no output files generated.")
